@@ -24,6 +24,8 @@ func(s*APIServer) Serve() {
 
 
 	// here service are regsitered 
+	tasksService := NewTasksService(s.store)
+	tasksService.RegisterRoute(router)
 
 	log.Println("Starting the API Server at ",s.addr)
 
