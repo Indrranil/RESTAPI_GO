@@ -1,10 +1,10 @@
 package main
 
-import{
+import (
 	"net/http"
 	"log"
 	"github.com/gorilla/mux"	
-}
+)
 type APIServer struct {
 	addr string // eg port:3000
 	store Store // point/repo where we have connection to the database
@@ -27,5 +27,5 @@ func(s*APIServer) Serve() {
 
 	log.Println("Starting the API Server at ",s.addr)
 
-	log.Fatal(http.ListenAndServe(s.add,subrouter))
+	log.Fatal(http.ListenAndServe(s.addr,subrouter))
 }
